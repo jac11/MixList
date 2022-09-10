@@ -19,30 +19,34 @@ class Gen_List:
              with open (path,'w') as List :
                   with open (path2,'w') as List :
                        pass
-          try:             
-              for i in range(int(self.args.Repete/3+1)):
-                   with open (path2,'a') as List :
-                       MixUserName = List.write(self.args.MyUserName +'\n'+self.args.VactimUser +'\n'+self.args.VactimUser +'\n')
-                   with open (self.args.passordlist,'r') as readpass :
-                       PassowordList = readpass.readlines()
-                       PassNumber = int(self.args.Repete/3)
-          except FileNotFoundError  as A :  
-                    print('[!] Error : ', A )
-                    exit()
+          Count = 0                         
+          for  i in range(int(self.args.Repete/3+1)):
+               with open (path2,'a') as List :
+                    if Count ==  int(self.args.Repete/3+1) :
+                        break
+                    else:   
+                        MixUserName = List.write(self.args.MyUserName +'\n'+self.args.VactimUser +'\n'+self.args.VactimUser +'\n')
+                                          
           count = 0 
           Num1  = 1
           Num2  = 2
-          with open (path,'w') as finsh :
-              MixPassList = finsh.write(self.args.Mypassord+'\n'+str(PassowordList[0])+str(PassowordList[0])) 
-          try:      
-             for Pass in  PassowordList :
+          try: 
+              with open (self.args.passordlist,'r') as readpass :
+                    PassowordList = readpass.readlines()
+                    PassNumber = int(self.args.Repete/3)
+              with open (path,'w') as finsh :
+                   MixPassList = finsh.write(self.args.Mypassord+'\n'+str(PassowordList[0])+str(PassowordList[0]))    
+              for Pass in  PassowordList :
                 with open (path,'a') as finsh :
                    MixPassList = finsh.write(self.args.Mypassord+'\n'+str(PassowordList[Num1])+ str(PassowordList[Num2]) )
                    count +=1
                    Num1 = Num1+2 
                    Num2 = Num2+2 
                    if count == int(self.args.Repete/3) :
-                     break                         
+                     break   
+          except FileNotFoundError  as A :  
+                 print('[!] Error : ', A )
+                 exit()                                  
           except IndexError :
               with open (path,'a') as finsh :
                  MixPassList = finsh.write(self.args.Mypassord+'\n'+str(PassowordList[-2])+str(PassowordList[-1] ) )                                       
