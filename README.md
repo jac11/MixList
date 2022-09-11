@@ -22,7 +22,8 @@ MixList.py -VU carlos -MU wiener -W  passwords -R 100 -MP peter -O list
 * -MP 'my password for my account" real password
 * -O output file of the lists will be generate "Note : if you give "-O list" output of the username list become "list_Mix_name" and list of passpwrd become "list_Mix_pass" all file you will found at same dir "MixList"
 ### Note:
-   be defult MixList have smail password wordlist so you can use or you can give any anther password wordlist
+   * be defult MixList have smail password wordlist so you can use or you can give any anther password wordlist
+   * support Json Format 
 ### 
 ------------------------------------------
 [vidoe from Port SWigger  Acdmy  ](https://www.youtube.com/watch?v=BoA-ms_h3HY)
