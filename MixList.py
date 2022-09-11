@@ -3,6 +3,8 @@ import os
 import sys
 import json
 import argparse
+import urllib.parse
+import base64
 with  open ('Banner','r') as readbanner:
       banner = readbanner.read()
       print(banner)    
@@ -26,7 +28,7 @@ class Gen_List:
                with open (self.path2,'a') as List :
                     if Count ==  int(self.args.Repete/3+1) :
                         break
-                    else:   
+                    else:                          
                         MixUserName = List.write(self.args.MyUserName +'\n'+self.args.VactimUser +'\n'+self.args.VactimUser +'\n')                                         
           count = 0 
           Num1  = 1
@@ -63,19 +65,19 @@ class Gen_List:
                         Json_F = str(readFile.readlines()).replace('\n','').replace('\\n','')
                         Json_format = json.dumps(Json_F)
                         with open(self.path2+".json" ,'w') as jwrite:
-                             jwrite.write(Json_format)  
+                             jwrite.write(Json_format.replace("'",'"')) 
                    with open (self.path,'r')as readFile:
                         Json_F = str(readFile.readlines()).replace('\n','').replace('\\n','')
                         Json_format = json.dumps(Json_F)
                         with open(self.path+".json" ,'w') as jwrite:
-                             jwrite.write(Json_format)
+                             jwrite.write(Json_format.replace("'",'"'))
              elif  self.args.Json and self.args.File and\
              self.args.File != self.args.Outlist :
                    with open (self.args.File,'r')as readFile:
                         Json_F = str(readFile.readlines()).replace('\n','').replace('\\n','')
                         Json_format = json.dumps(Json_F)
                         with open(self.args.File+".json" ,'w') as jwrite:
-                             jwrite.write(Json_format) 
+                             jwrite.write(Json_format.replace("'",'"'))
          except FileNotFoundError  as A :  
                  print('[!] Error : ', A )
                  exit()                                                                                          
