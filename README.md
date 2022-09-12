@@ -12,7 +12,7 @@ Broken brute-force protection, IP block
 ```
 ./MixList.py -VU carlos -MU wiener -W  passwords -R 100 -MP peter -O list
 ./MixList.py -VU carlos -MU wiener -W  passwords -R 100 -MP peter -O liddst -J -F passwords
-./MixList.py -VU carlos -MU wiener -W  passwords -R 100 -MP peter -O liddst -J -F list
+./MixList.py -VU carlos -MU wiener -W  passwords -R 100 -MP peter -O list -J -F list
 ````
 ### breakdown the command :
 ----------------
