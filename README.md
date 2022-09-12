@@ -10,7 +10,9 @@ Broken brute-force protection, IP block
 ### Command 
 -------------------
 ```
-MixList.py -VU carlos -MU wiener -W  passwords -R 100 -MP peter -O list
+./MixList.py -VU carlos -MU wiener -W  passwords -R 100 -MP peter -O list
+./MixList.py -VU carlos -MU wiener -W  passwords -R 100 -MP peter -O liddst -J -F passwords
+./MixList.py -VU carlos -MU wiener -W  passwords -R 100 -MP peter -O liddst -J -F list
 ````
 ### breakdown the command :
 ----------------
@@ -21,6 +23,8 @@ MixList.py -VU carlos -MU wiener -W  passwords -R 100 -MP peter -O list
 * -R how many passord and user name you will be generate
 * -MP 'my password for my account" real password
 * -O output file of the lists will be generate "Note : if you give "-O list" output of the username list become "list_Mix_name" and list of passpwrd become "list_Mix_pass" all file you will found at same dir "MixList"
+* -J " create output file Json"
+* -F " select the file to be json format incase the pswword list -j -f "path of the password wordlist" , if you want MixList passowrd and user name put same file name as -O " same like ./MixList.py -VU carlos -MU wiener -W  passwords -R 100 -MP peter -O liddst -J -F list
 ### Note:
    * be defult MixList have smail password wordlist so you can use or you can give any anther password wordlist
    * support Json Format 
